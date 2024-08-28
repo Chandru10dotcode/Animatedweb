@@ -1,0 +1,308 @@
+html{
+    box-sizing: border-box;
+    padding: 0px;
+    margin : 0px;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.containerturned a{
+    padding-left : 2rem;
+}
+
+body{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 1rem;
+	color: #405D72;
+    background-color: #130606;
+}
+
+#page{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+}
+
+.container{
+    width : 65%;
+    height : 65%;
+   
+    background-color: #363636;
+    border-radius : 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+
+}
+
+.maintext{
+     font-family: "Lucida Bright", Georgia, serif;
+     font-size: 4rem;
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 800;
+     line-height: 26.4px; 
+     margin : 2rem 1rem;
+     color :  #DBE1EB;
+}
+
+.container :nth-child(2) {
+    margin-left: 5rem; 
+}
+
+.containerturned{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    position: absolute;
+    top : 60px;
+    left: 60px;
+    visibility: hidden;
+
+
+    word-break: break-word;
+    overflow-wrap: break-word;
+
+}
+
+.text{
+    
+    position :relative;
+    color : #525554;
+    animation: appear 1s ease-out forwards 3s both ;
+    margin-left : 2rem;
+    font-size: 1.2rem;
+    margin-bottom : 8px;
+    padding-right: 50px;
+
+}
+.head {
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    font-size: 3rem;
+    margin-left : 1rem;
+
+}
+
+.head:nth-child(2){
+    margin-bottom : 3rem;
+}
+
+.market {
+    margin-top:9rem;
+    font-size : 1.8rem;
+
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotateY(0deg) scaleX(100%) scaleY(100%);
+      border-radius: 0px;
+      
+    }
+    75% {
+        transform: rotateY(180deg) scaleX(150%) scaleY(170%);
+        border-radius: 10px;
+        
+      }
+    100% {
+      transform: rotateY(180deg)  scaleX(145%) scaleY(140%);
+      border-radius: 20px;
+    }
+  }
+
+@keyframes changebg {
+    from {
+        /* background: linear-gradient(289deg, rgba(173,94,129,1) 0%, rgba(148,187,233,1) 100%); */
+        background-color: #242F40;
+    }
+    to {
+        background-color : #E5E5E5;
+    }
+}
+
+
+
+@keyframes rmimg {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
+
+@keyframes showturned {
+    from {
+        opacity: 0%;
+        visibility: hidden;
+    }
+    to{
+        opacity : 100%;
+        visibility: visible;
+    }
+}
+
+
+.container {
+    animation: rotate 1.0s ease-in-out 1.2s both, changebg 1s linear 1.2s both;
+    animation-direction: normal;
+
+}
+
+.maintext {
+    animation: rmimg 0.5s linear 1.0s both;
+}
+
+.containerturned{
+    animation : showturned 1.0s linear 2s both;
+} 
+
+.long{
+    word-break: break-word;
+    overflow-wrap: break-word;
+    padding-right : 50px;
+}
+
+
+.text {
+    opacity: 0;
+    animation: fadeIn 1s linear both;
+    display: inline-block;
+}
+
+
+.text:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.text:nth-child(2) {
+    animation-delay: 1.1s;
+}
+
+.text:nth-child(3) {
+    animation-delay: 2.1s;
+}
+
+.text:nth-child(4) {
+    animation-delay: 3.1s;
+}
+
+.text:nth-child(5) {
+    animation-delay: 4.1s;
+}
+
+.text:nth-child(6) {
+    animation-delay: 5.5s;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 85%;
+        height: auto;
+    }
+
+    .maintext {
+        font-size: 3rem;
+        margin: 1rem;
+    }
+
+    .containerturned {
+        top: 5%;
+        left: 5%;
+        width: 90%;
+    }
+
+    .head {
+        font-size: 2.5rem;
+    }
+
+    .market {
+        font-size: 1.5rem;
+    }
+
+    .text {
+        font-size: 1rem;
+        margin-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+
+    .maintext {
+        font-size: 2.5rem;
+    }
+
+    .head {
+        font-size: 2rem;
+    }
+
+    .market {
+        font-size: 1.3rem;
+    }
+
+    .text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        height: auto;
+    }
+
+    .maintext {
+        font-size: 2rem;
+        margin: 0.5rem;
+    }
+
+    .head {
+        font-size: 1.8rem;
+    }
+
+    .market {
+        font-size: 1.2rem;
+    }
+
+    .text {
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+    }
+
+    .containerturned {
+        top: 2%;
+        left: 2%;
+    }
+}
+
+
+
+
+
+
+
